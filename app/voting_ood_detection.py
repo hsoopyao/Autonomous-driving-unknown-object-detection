@@ -1,8 +1,3 @@
-!pip
-install
-gradio
-ultralytics
-
 import gradio as gr
 import cv2
 import torch
