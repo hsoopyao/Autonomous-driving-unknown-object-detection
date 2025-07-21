@@ -13,7 +13,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # 加载分类模型（ID vs OOD）
 model = models.resnet18(pretrained=False)
 model.fc = torch.nn.Linear(model.fc.in_features, 2)
-model.load_state_dict(torch.load("/kaggle/input/binary-model/best_model.pth", map_location=device))
+model.load_state_dict(torch.load("/kaggle/input/binary-model/classification_model.pth", map_location=device))
 model.to(device)
 model.eval()
 

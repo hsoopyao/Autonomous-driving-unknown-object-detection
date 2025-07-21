@@ -109,7 +109,7 @@ for epoch in range(num_epochs):
     if val_loss < best_val_loss:
         best_val_loss = val_loss
         patience_counter = 0
-        torch.save(model.state_dict(), 'best_model.pth')
+        torch.save(model.state_dict(), 'classification_model.pth')
     else:
         patience_counter += 1
         if patience_counter >= patience:
@@ -139,7 +139,7 @@ plt.tight_layout()
 plt.show()
 
 # 混淆矩阵
-model.load_state_dict(torch.load('best_model.pth'))
+model.load_state_dict(torch.load('classification_model.pth'))
 model.eval()
 
 all_preds = []

@@ -17,7 +17,7 @@ SOILING_CLASSES = [5, 6, 7]  # 污渍类别
 # 加载二分类模型（0: ID, 1: OOD）
 cls_model = models.resnet18(pretrained=False)
 cls_model.fc = torch.nn.Linear(cls_model.fc.in_features, 2)
-cls_model.load_state_dict(torch.load("best_model.pth", map_location=device))
+cls_model.load_state_dict(torch.load("classification_model.pth", map_location=device))
 cls_model.to(device)
 cls_model.eval()
 
